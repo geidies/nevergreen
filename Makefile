@@ -7,6 +7,7 @@ docker: target/nevergreen-standalone.jar
 	docker build -t emq-nevergreen .
 
 target/nevergreen-standalone.jar:
+	npm install
 	npm run build
 	npm run sass
 	lein uberjar
