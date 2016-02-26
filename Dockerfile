@@ -10,13 +10,13 @@ WORKDIR /usr/local/nevergreen
 RUN apk update && apk add nodejs
 RUN npm cache clean -f && npm install -g n && n stable
 
-COPY src /usr/local/nevergreen/src/
 COPY resources /usr/local/nevergreen/resources/
 COPY main.js /usr/local/nevergreen/
 COPY package.json /usr/local/nevergreen/
 COPY project.clj /usr/local/nevergreen/
 RUN npm install
-COPY .???* /usr/local/nevergreen/
+COPY src /usr/local/nevergreen/src/
+COPY .??* /usr/local/nevergreen/
 RUN npm run build
 RUN npm run sass
 

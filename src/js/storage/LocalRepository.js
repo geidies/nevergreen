@@ -6,7 +6,8 @@ module.exports = {
   init() {
     localforage.config({
       name: 'nevergreen',
-      storeName: 'nevergreen'
+      storeName: 'nevergreen',
+      driver: localforage.LOCALSTORAGE
     })
   },
 
