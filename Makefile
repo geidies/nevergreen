@@ -1,10 +1,13 @@
+CONTAINER_NAME = emq-nevergreen
 
-.PHONY: all docker test
+.PHONY: all docker test jar
 
 all: docker
 
-docker: target/nevergreen-standalone.jar
-	docker build -t emq-nevergreen .
+docker:
+	docker build -t $(CONTAINER_NAME) .
+
+jar: target/nevergreen-standalone.jar
 
 target/nevergreen-standalone.jar:
 	npm install
@@ -18,3 +21,8 @@ test:
 
 clean:
 	lein clean
+
+release: target/nevergreen-docker.tgz
+
+target/nevergreen-docker.tgz: docker
+	docker save -o $@ $(CONTAINER_NAME)
