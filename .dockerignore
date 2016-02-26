@@ -5,14 +5,7 @@ ci
 dev-resources
 develop.sh
 doc
-main.js
 nevergreen.iml
-node_modules
-package.json
 pre-push.sh
-project.clj
-resources
-src
-test
 *.tgz
 **/*.tgz
