@@ -9,3 +9,5 @@ nevergreen.iml
 pre-push.sh
 *.tgz
 **/*.tgz
+target
+node_modules
